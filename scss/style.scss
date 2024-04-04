@@ -1,9 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@use 'css-reset';
 
-body{
-    margin: 0;
-    padding: 0; 
-    background: rgb(162, 164, 179);
-    overflow: hidden;
+$main-color-dark: rgb(19, 0, 44);
+$main-color-light: rgb(225, 218, 255);
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.navigation-bar {
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    background: rgb(27,7,7);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgb(0, 0, 0) 100%);
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    h3 {
+        font-size: 3vw;
+        color: $main-color-light;
+        font-weight: bold;
+        -webkit-text-stroke-width: 0.1vw;
+        -webkit-text-stroke-color: $main-color-dark;
+    }
+
+    .links{
+        width: 40vw;
+        height: 13vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .link {
+            width: 10vw;
+            height: 10vh;
+            font-size: 1.5vw;
+            color: $main-color-dark;
+            text-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-text-stroke-width: 0.02vw;
+            -webkit-text-stroke-color: $main-color-light;
+        }
+    }
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background: url(../assets/img/bg-header.webp) center/cover;
+    padding: 16vh 5vw 0vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: $main-color-dark;
+        font-size: 5vw;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 0.1vw;
+        -webkit-text-stroke-color: $main-color-light;
+        user-select: none;
+    }
+
+    h2 {
+        color: $main-color-light;
+        font-size: 1.2vw;
+        margin: 1vw;
+        word-spacing: 0.2vw;
+        font-style: italic;
+    }
 }
