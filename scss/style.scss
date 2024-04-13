@@ -1,75 +1,193 @@
 @use 'css-reset';
 
-$main-color-dark: rgb(19, 0, 44);
-$main-color-light: rgb(225, 218, 255);
+@mixin medium {
+    @media screen and (min-width: 800px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (min-width: 1264px) {
+        @content;
+    }
+}
+
+$text-color: #e1e6f0;
+$bg-header-color: #00000052;
+$tomato-red: #A60303;
+$mustard-gold: #D98E04;
 
 body {
+    margin: 0;
+    overflow-x: hidden;
     font-family: "Roboto", sans-serif;
 }
 
-.navigation-bar {
-    width: 100vw;
-    height: 15vh;
-    position: absolute;
-    background: rgb(27,7,7);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 50%, rgb(0, 0, 0) 100%);
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Navigational bar
+
+nav {
+    width: 100%;
+    height: 75px;
+    background-color: rgba($mustard-gold, .5);
+    backdrop-filter: blur(10px);
+    border-bottom: 5px solid black;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: $text-color;
+
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    h3 {
-        font-size: 3vw;
-        color: $main-color-light;
-        font-weight: bold;
-        -webkit-text-stroke-width: 0.1vw;
-        -webkit-text-stroke-color: $main-color-dark;
+    @include medium {
+        font-size: 30px;
     }
 
-    .links{
-        width: 40vw;
-        height: 13vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    @include large {
+        font-size: 35px;
+    }
 
-        .link {
-            width: 10vw;
-            height: 10vh;
-            font-size: 1.5vw;
-            color: $main-color-dark;
-            text-wrap: wrap;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            -webkit-text-stroke-width: 0.02vw;
-            -webkit-text-stroke-color: $main-color-light;
+    .logo {
+        padding-left: 30px;
+        letter-spacing: 8px;
+    }
+
+    .menu {
+        padding-right: 5vw;
+
+        text-align: right;
+
+        @include medium {
+            padding-right: 160px;
+        }
+
+        span {
+            font-size: 40px;
+            font-weight: 400;
+
+            transition: weight 1s;
+            cursor: pointer;
+            user-select: none;
+
+            @include medium {
+                font-size: 50px;
+            }
+        
+            @include large {
+                font-size: 55px;
+            }
+
+            &:hover {
+                font-weight: bolder;
+            }
         }
     }
 }
 
+// Header
+
 header {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background: url(../assets/img/bg-header.webp) center/cover;
-    padding: 16vh 5vw 0vw;
-    box-sizing: border-box;
+    background: url('../assets/img/header-bg.webp') center/cover fixed;
+
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 
-    h1 {
-        color: $main-color-dark;
-        font-size: 5vw;
-        font-weight: bolder;
-        -webkit-text-stroke-width: 0.1vw;
-        -webkit-text-stroke-color: $main-color-light;
-        user-select: none;
-    }
+    .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
-    h2 {
-        color: $main-color-light;
-        font-size: 1.2vw;
-        margin: 1vw;
-        word-spacing: 0.2vw;
-        font-style: italic;
+        @include medium() {
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+
+            color: $text-color;
+
+            user-select: none;
+            z-index: 1;
+
+            @include medium {
+                font-size: 70px;
+            }
+
+            @include large {
+                font-size: 90px;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+    
+            width: 100%;
+            height: 100vh;
+            background-color: $bg-header-color;
+        }
+
+        a {
+            background-color: $tomato-red;
+            margin-top: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 5px solid darken($text-color, 8);
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            z-index: 1;
+            transition: 0.5s;
+
+            &:hover {
+                transform: skewX(190deg);
+                background-color: lighten($tomato-red, 10);
+            }
+            
+            @include medium() {
+                padding: 3px;
+            }
+
+            @include large() {
+                padding: 5px;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                font-style: italic;
+                color: darken($text-color, 8);
+
+                margin: 5px;
+
+                @include medium() {
+                    font-size: 45px;
+                }
+    
+                @include large() {
+                    font-size: 55px;
+                }
+            }
+        }
     }
 }
