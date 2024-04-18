@@ -184,6 +184,8 @@ header {
   width: 100%;
   height: 100vh;
   background: url("../assets/img/header-bg.webp") center/cover fixed;
+  padding: 100px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -460,7 +462,6 @@ iframe {
 .options {
   padding: 30px;
   display: flex;
-  gap: 30px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -485,13 +486,12 @@ iframe {
   align-items: center;
 }
 .options .option .burger-inputs select {
-  min-width: 60%;
+  width: 60%;
   height: 25px;
   border-radius: 6px;
   background-color: #e1e6f0;
   border: 2px solid #A60303;
   transition: 0.5s;
-  margin: 0 10px;
 }
 .options .option .burger-inputs select:hover {
   border: 2px solid #e1e6f0;
@@ -508,7 +508,6 @@ iframe {
   background-color: #e1e6f0;
   border: 2px solid #A60303;
   transition: 0.5s;
-  margin: 0 10px;
 }
 .options .option .burger-inputs input:hover {
   border: 2px solid #e1e6f0;
