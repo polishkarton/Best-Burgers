@@ -29,6 +29,9 @@ const bun = document.getElementsByClassName('bun');
 
 function plusFunc(ingredient, burger, bun) {
     const newIngredient = document.createElement("div");
+    const alert = document.getElementsByClassName('alert');
+    alert[0].classList.remove('alert-alerted')
+    alert[0].innerHTML = '';
     newIngredient.classList.add(ingredient);
     newIngredient.innerHTML = ingredient.toUpperCase();
     burger.insertBefore(newIngredient, bun);
@@ -36,10 +39,14 @@ function plusFunc(ingredient, burger, bun) {
 
 function minusFunc(ingredient) {
     const ing = document.getElementsByClassName(ingredient);
+    const alert = document.getElementsByClassName('alert');
+    alert[0].classList.remove('alert-alerted')
+    alert[0].innerHTML = '';
     if (ing.length > 0) {
         ing[0].remove();
     } else {
-        console.log('error no more ' + ingredient);
+        alert[0].innerHTML = 'error no more ' + ingredient;
+        alert[0].classList.add('alert-alerted');
     }
 }
 
@@ -48,14 +55,13 @@ options.forEach((elem) => {
     const minus = elem.getElementsByClassName('delete')[0];
     const elemClass = elem.title;
     plus.addEventListener('click', () => {
-        plusFunc(elemClass, burger, bun[1]);
+        plusFunc(elemClass, burger, bun[1], elemClass);
     });
 
     minus.addEventListener('click', () => {
         minusFunc(elemClass);
     });
 });
-
 
 
 

@@ -1,7 +1,7 @@
 @use "css-reset";
 
 @mixin medium {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 950px) {
     @content;
   }
 }
@@ -373,10 +373,14 @@ section {
   box-sizing: border-box;
   display: flex;
 
-  &-md75 {
+  &-md70 {
     @include medium {
-      flex: 0 0 75%;
+      flex: 0 0 70%;
     }
+  }
+
+  &-col {
+    flex-direction: column;
   }
 
   &-md50 {
@@ -395,6 +399,12 @@ section {
   &-md25 {
     @include medium {
       flex: 0 0 25%;
+    }
+  }
+
+  &-md5 {
+    @include medium {
+      flex: 0 0 5%;
     }
   }
 
@@ -434,7 +444,6 @@ iframe {
 
 %burger-part {
   width: 90%;
-  min-height: 10px;
   font-weight: bold;
   height: 30px;
   border-radius: 6px;
@@ -458,7 +467,7 @@ iframe {
   gap: 10px;
   color: $text-color;
   background-color: lighten($main-dark-color, 5);
-  border: 2px solid $tomato-red;
+  border: 1px solid $tomato-red;
   padding: 30px 10px;
   box-sizing: border-box;
   border-radius: 6px;
@@ -467,6 +476,18 @@ iframe {
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  .alert {
+    @extend %burger-part;
+    background-color: rgb(182, 23, 23);
+    height: 0;
+    border: none;
+
+    &-alerted {
+      height: auto;
+      border: 1px solid $tomato-red;
+    }
   }
 
   .bun {
@@ -498,6 +519,7 @@ iframe {
 
 .burger-options {
   width: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -506,7 +528,7 @@ iframe {
   font-style: italic;
   color: $text-color;
   background-color: lighten($main-dark-color, 5);
-  border: 2px solid $tomato-red;
+  border: 1px solid $tomato-red;
   box-sizing: border-box;
 
   .option {
@@ -549,5 +571,59 @@ iframe {
         background-color: $main-dark-color;
       }
     }
+  }
+}
+
+.request {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  font-style: italic;
+  color: $text-color;
+  background-color: lighten($main-dark-color, 5);
+  border: 1px solid $tomato-red;
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  textarea {
+    resize: none;
+    border-radius: 6px;
+    font-style: italic;
+    color: $text-color;
+    background-color: lighten($main-dark-color, 10);
+    border: none;
+
+    &:focus {
+      outline: none;
+      background-color: lighten($main-dark-color, 5);
+    }
+  }
+}
+
+.buy {
+  width: 100%;
+  border-radius: 6px;
+  font-style: italic;
+  color: $text-color;
+  background-color: darken($main-dark-color, 2);
+  border: 2px solid $tomato-red;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: $main-dark-color;
+  }
+
+  @include medium {
+  text-orientation: upright;
+  writing-mode: vertical-rl;
   }
 }

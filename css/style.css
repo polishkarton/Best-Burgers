@@ -93,7 +93,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   nav {
     font-size: 30px;
   }
@@ -114,7 +114,7 @@ nav .menu {
   padding-right: 5vw;
   text-align: right;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   nav .menu {
     padding-right: 10px;
   }
@@ -126,7 +126,7 @@ nav .menu span {
   cursor: pointer;
   user-select: none;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   nav .menu span {
     font-size: 50px;
   }
@@ -161,7 +161,7 @@ nav .menu span:hover {
   transition: top 0.5s;
   z-index: 2;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   #nav-box {
     width: 20%;
   }
@@ -178,7 +178,7 @@ nav .menu span:hover {
   font-weight: bold;
   transition: 0.5s;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   #nav-box .link {
     justify-content: center;
   }
@@ -208,7 +208,7 @@ header .header-container {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   header .header-container {
     align-items: flex-start;
   }
@@ -222,7 +222,7 @@ header .header-container h1 {
   user-select: none;
   z-index: 1;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   header .header-container h1 {
     font-size: 70px;
     line-height: 70px;
@@ -263,7 +263,7 @@ header .header-container a:hover {
   transform: skewX(190deg);
   background-color: #d80404;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   header .header-container a {
     padding: 3px;
   }
@@ -280,7 +280,7 @@ header .header-container a p {
   color: #c6cfe2;
   margin: 5px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   header .header-container a p {
     font-size: 45px;
   }
@@ -307,7 +307,7 @@ section h2 {
   letter-spacing: 15px;
   padding-top: 100px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   section h2 {
     font-size: 45px;
   }
@@ -322,7 +322,7 @@ section h3 {
   font-size: 20px;
   margin: 8px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   section h3 {
     font-size: 30px;
   }
@@ -336,7 +336,7 @@ section p {
   font-weight: 500;
   font-size: 15px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   section p {
     font-size: 20px;
   }
@@ -350,7 +350,7 @@ section p {
 .container {
   padding: 25px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .container {
     width: 740px;
     margin: 0 auto;
@@ -368,7 +368,7 @@ section p {
   flex-direction: column;
   justify-content: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .row {
     flex-direction: row;
   }
@@ -380,28 +380,36 @@ section p {
   box-sizing: border-box;
   display: flex;
 }
-@media screen and (min-width: 800px) {
-  .collumn-md75 {
-    flex: 0 0 75%;
+@media screen and (min-width: 950px) {
+  .collumn-md70 {
+    flex: 0 0 70%;
   }
 }
-@media screen and (min-width: 800px) {
+.collumn-col {
+  flex-direction: column;
+}
+@media screen and (min-width: 950px) {
   .collumn-md50 {
     flex: 0 0 50%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .collumn-md33 {
     flex: 0 0 33.333333%;
     text-align: center;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .collumn-md25 {
     flex: 0 0 25%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
+  .collumn-md5 {
+    flex: 0 0 5%;
+  }
+}
+@media screen and (min-width: 950px) {
   .collumn-md15 {
     flex: 0 0 15%;
   }
@@ -427,9 +435,8 @@ iframe {
   box-shadow: 0px 0px 80px 10px rgba(0, 0, 0, 0.9);
 }
 
-#burger-container .meat, #burger-container .cheese, #burger-container .tomato, #burger-container .letuce, #burger-container .bun {
+#burger-container .meat, #burger-container .cheese, #burger-container .tomato, #burger-container .letuce, #burger-container .bun, #burger-container .alert {
   width: 90%;
-  min-height: 10px;
   font-weight: bold;
   height: 30px;
   border-radius: 6px;
@@ -439,7 +446,7 @@ iframe {
   align-items: center;
   transition: 0.5s;
 }
-#burger-container .meat:hover, #burger-container .cheese:hover, #burger-container .tomato:hover, #burger-container .letuce:hover, #burger-container .bun:hover {
+#burger-container .meat:hover, #burger-container .cheese:hover, #burger-container .tomato:hover, #burger-container .letuce:hover, #burger-container .bun:hover, #burger-container .alert:hover {
   transform: scale(1.05);
 }
 
@@ -452,7 +459,7 @@ iframe {
   gap: 10px;
   color: #e1e6f0;
   background-color: #161624;
-  border: 2px solid #a60303;
+  border: 1px solid #a60303;
   padding: 30px 10px;
   box-sizing: border-box;
   border-radius: 6px;
@@ -461,6 +468,15 @@ iframe {
 }
 #burger-container:hover {
   transform: scale(1.05);
+}
+#burger-container .alert {
+  background-color: rgb(182, 23, 23);
+  height: 0;
+  border: none;
+}
+#burger-container .alert-alerted {
+  height: auto;
+  border: 1px solid #a60303;
 }
 #burger-container .bun {
   background-color: rgb(107, 56, 40);
@@ -481,6 +497,7 @@ iframe {
 
 .burger-options {
   width: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,7 +506,7 @@ iframe {
   font-style: italic;
   color: #e1e6f0;
   background-color: #161624;
-  border: 2px solid #a60303;
+  border: 1px solid #a60303;
   box-sizing: border-box;
 }
 .burger-options .option {
@@ -505,7 +522,7 @@ iframe {
   font-size: 15px;
   font-weight: bold;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
   .burger-options .option {
     font-size: 25px;
     font-weight: bold;
@@ -530,6 +547,58 @@ iframe {
 .burger-options .option button:hover {
   color: #e1e6f0;
   background-color: rgb(12, 12, 20);
+}
+
+.request {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  font-style: italic;
+  color: #e1e6f0;
+  background-color: #161624;
+  border: 1px solid #a60303;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.request textarea {
+  resize: none;
+  border-radius: 6px;
+  font-style: italic;
+  color: #e1e6f0;
+  background-color: #1f1f34;
+  border: none;
+}
+.request textarea:focus {
+  outline: none;
+  background-color: #161624;
+}
+
+.buy {
+  width: 100%;
+  border-radius: 6px;
+  font-style: italic;
+  color: #e1e6f0;
+  background-color: #08080e;
+  border: 2px solid #a60303;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.buy:hover {
+  transform: scale(1.1);
+  background-color: rgb(12, 12, 20);
+}
+@media screen and (min-width: 950px) {
+  .buy {
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
